@@ -1,20 +1,36 @@
 // Your code here
-function saturdayFun(){
-  console.log('This Saturday, I want to roller-skate!');
+function saturdayFun(activity = "roller-skate"){
+  return `This Saturday, I want to ${activity}!`
 }
-saturdayFun();
+let mondayWork = function(activity = "go to the office"){
+  return `This Monday, I will ${activity}.`
+}
+function wrapAdjective(visualFlair = "*"){
+  return function giveAdjective(adjective = "special") {
+    return `You are ${visualFlair}${adjective}${visualFlair}!`
+  }
+}
 
-saturdayFun();
-function saturdayFun(){
-  console.log('This Saturday, I want to bathe my dog!');
+let Calculator = {
+  add : function(a,b){
+    return a+b
+  },
+  subtract : function(a,b){
+    return a-b
+  },
+  multiply : function(a,b){
+    return a*b
+  },
+  divide : function(a,b) {
+    return a/b
+  },
 }
+let actionApplyer = function(startingPoint, array) {
+  let a = startingPoint
 
-let fn=function(mondayWork){
-  console.log('This Monday, I will go to the office.');
-}
-fn()
+  for (let i = 0; i < array.length; i++ ){
+    a = array[i](a)
+  }
 
-function greet(){
-  console.log('hello')
+  return a
 }
-greet(outer)
